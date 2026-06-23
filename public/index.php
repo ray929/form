@@ -4,6 +4,21 @@
  * Run: php -S localhost:8080 -t public/ public/index.php
  */
 
+// === Extension pre-flight ===
+$requiredExtensions = ['pdo_sqlite', 'curl', 'session', 'mbstring', 'json', 'fileinfo'];
+$missing = [];
+foreach ($requiredExtensions as $ext) {
+    if (!extension_loaded($ext)) {
+        $missing[] = $ext;
+    }
+}
+if ($missing) {
+    http_response_code(500);
+    header('Content-Type: text/html; charset=utf-8');
+    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>500 — Missing Extensions</title><style>body{font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f5f5f7;color:#1d1d1f}div{max-width:480px;padding:32px;background:#fff;border:1px solid #e5e5e7;border-radius:8px}h2{font-size:18px;margin:0 0 12px;color:#c23b3b}p{font-size:14px;margin:0 0 8px;color:#8e8e93}ul{margin:0;padding-left:20px;font-size:13px;font-family:monospace}li{color:#991b1b;margin-bottom:4px}</style></head><body><div><h2>Missing PHP Extensions</h2><p>The following extensions are required but not enabled:</p><ul><li>' . implode('</li><li>', array_map('htmlspecialchars', $missing)) . '</li></ul><p>Enable them in php.ini and restart the server.</p></div></body></html>';
+    exit;
+}
+
 // Error reporting — disable in production
 error_reporting(E_ALL);
 ini_set('display_errors', '0');
@@ -15,8 +30,22 @@ require __DIR__ . '/../helpers.php';
 require __DIR__ . '/../db.php';
 
 // Init App container
-App::$config = require __DIR__ . '/../config.php';
-App::$db = db_connect(App::config()['db_path']);
+$configFile = __DIR__ . '/../config.php';
+if (!file_exists($configFile)) {
+    http_response_code(500);
+    header('Content-Type: text/html; charset=utf-8');
+    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>500 — Missing Config</title><style>body{font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f5f5f7;color:#1d1d1f}div{max-width:480px;padding:32px;background:#fff;border:1px solid #e5e5e7;border-radius:8px}h2{font-size:18px;margin:0 0 12px;color:#c23b3b}p{font-size:14px;color:#8e8e93}</style></head><body><div><h2>Config Not Found</h2><p>Copy <code>config.example.php</code> to <code>config.php</code> and fill in your credentials.</p></div></body></html>';
+    exit;
+}
+App::$config = require $configFile;
+try {
+    App::$db = db_connect(App::config()['db_path']);
+} catch (PDOException $e) {
+    http_response_code(500);
+    header('Content-Type: text/html; charset=utf-8');
+    echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>500 — Database Error</title><style>body{font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f5f5f7;color:#1d1d1f}div{max-width:480px;padding:32px;background:#fff;border:1px solid #e5e5e7;border-radius:8px}h2{font-size:18px;margin:0 0 12px;color:#c23b3b}p{font-size:14px;color:#8e8e93}code{font-size:12px;background:#fef2f2;padding:2px 6px;border-radius:3px;word-break:break-all}</style></head><body><div><h2>Database Connection Failed</h2><p><code>' . htmlspecialchars($e->getMessage()) . '</code></p><p>Make sure the <code>db/</code> directory exists and is writable by PHP.</p></div></body></html>';
+    exit;
+}
 
 // Start session
 if (session_status() === PHP_SESSION_NONE) {

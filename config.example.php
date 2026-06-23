@@ -29,4 +29,7 @@ return [
 
     // 默认语言（en / zh）
     'default_lang' => 'en',
+
+    // cURL 代理（访问外网 API 时使用，留空则不使用代理）
+    'curl_proxy' => '',
 ];
