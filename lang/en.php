@@ -1,0 +1,107 @@
+<?php
+return [
+    // Common
+    'site_name' => 'Forms',
+    'save' => 'Save',
+    'cancel' => 'Cancel',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'create' => 'Create',
+    'back' => 'Back',
+    'actions' => 'Actions',
+    'confirm_delete' => 'Are you sure you want to delete this?',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'prev' => 'Prev',
+    'next' => 'Next',
+    'page' => 'Page',
+    'of' => 'of',
+    'copy' => 'Copy',
+    'copied' => 'Copied!',
+
+    // Auth
+    'login' => 'Login',
+    'logout' => 'Logout',
+    'password' => 'Password',
+    'password_placeholder' => 'Enter password',
+    'login_failed' => 'Invalid password',
+    'turnstile_failed' => 'Verification failed, please try again',
+
+    // Navigation
+    'dashboard' => 'Dashboard',
+    'forms' => 'Forms',
+    'submissions' => 'Submissions',
+    'embed_code' => 'Embed Code',
+    'back_to_admin' => 'Back to Admin',
+
+    // Dashboard
+    'total_forms' => 'Total Forms',
+    'total_submissions' => 'Total Submissions',
+    'active_forms' => 'Active Forms',
+    'email_delivery' => 'Email Delivery',
+
+    // Forms
+    'your_forms' => 'Your Forms',
+    'create_form' => 'Create Form',
+    'edit_form' => 'Edit Form',
+    'form_name' => 'Form Name',
+    'form_name_placeholder' => 'Enter form name',
+    'recipient_email' => 'Recipient Email',
+    'recipient_placeholder' => 'Leave empty for default',
+    'query_password' => 'Query Password',
+    'query_password_placeholder' => 'Set a password for data access',
+    'query_password_hint' => 'Leave empty to keep current password. Used to access /query page.',
+    'status' => 'Status',
+    'active' => 'Active',
+    'inactive' => 'Inactive',
+    'draft' => 'Draft',
+    'no_forms' => 'No forms yet.',
+    'form_created' => 'Form created successfully.',
+    'form_updated' => 'Form updated successfully.',
+    'form_deleted' => 'Form deleted successfully.',
+
+    // Embed
+    'embed_instructions' => 'Copy the code below and paste it into your website:',
+    'theme' => 'Theme',
+    'light' => 'Light',
+    'dark' => 'Dark',
+    'auto' => 'Auto',
+    'language' => 'Language',
+
+    // Submissions
+    'recent_submissions' => 'Recent Submissions',
+    'submission_time' => 'Time',
+    'name' => 'Name',
+    'contact' => 'Contact',
+    'content' => 'Content',
+    'email_status' => 'Email Status',
+    'sent' => 'Sent',
+    'failed' => 'Failed',
+    'pending' => 'Pending',
+    'no_submissions' => 'No submissions yet.',
+
+    // Form fields (embed)
+    'form_name_label' => 'Name',
+    'form_name_placeholder' => 'Your name',
+    'form_contact' => 'Contact',
+    'form_contact_email' => 'Email',
+    'form_contact_phone' => 'Phone',
+    'form_contact_placeholder_email' => 'your@email.com',
+    'form_contact_placeholder_phone' => 'Your phone number',
+    'form_contact_hint' => 'Please fill in at least one',
+    'form_content_label' => 'Message',
+    'form_content_placeholder' => 'Your message',
+    'form_submit' => 'Submit',
+    'form_contact_type_required' => 'Please provide at least an email or phone number',
+    'form_submit_success' => 'Submitted successfully!',
+    'form_submit_error' => 'Submission failed, please try again',
+    'form_validation_error' => 'Please fill in all required fields',
+
+    // Query page
+    'query_title' => 'Form Data Query',
+    'query_login_desc' => 'Enter password to view submission data',
+    'query_form_select' => 'Select Form',
+    'query_all_forms' => 'All Forms',
+    'query_search' => 'Search',
+    'query_no_results' => 'No matching results.',
+];

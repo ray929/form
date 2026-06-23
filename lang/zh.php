@@ -1,0 +1,107 @@
+<?php
+return [
+    // Common
+    'site_name' => '表单系统',
+    'save' => '保存',
+    'cancel' => '取消',
+    'delete' => '删除',
+    'edit' => '编辑',
+    'create' => '新建',
+    'back' => '返回',
+    'actions' => '操作',
+    'confirm_delete' => '确定要删除吗？',
+    'yes' => '确定',
+    'no' => '取消',
+    'prev' => '上一页',
+    'next' => '下一页',
+    'page' => '第',
+    'of' => '页，共',
+    'copy' => '复制',
+    'copied' => '已复制！',
+
+    // Auth
+    'login' => '登录',
+    'logout' => '退出',
+    'password' => '密码',
+    'password_placeholder' => '请输入密码',
+    'login_failed' => '密码错误',
+    'turnstile_failed' => '验证失败，请重试',
+
+    // Navigation
+    'dashboard' => '仪表盘',
+    'forms' => '表单管理',
+    'submissions' => '提交数据',
+    'embed_code' => '嵌入代码',
+    'back_to_admin' => '返回管理面板',
+
+    // Dashboard
+    'total_forms' => '表单总数',
+    'total_submissions' => '总提交数',
+    'active_forms' => '活跃表单',
+    'email_delivery' => '邮件送达率',
+
+    // Forms
+    'your_forms' => '表单列表',
+    'create_form' => '新建表单',
+    'edit_form' => '编辑表单',
+    'form_name' => '表单名称',
+    'form_name_placeholder' => '输入表单名称',
+    'recipient_email' => '收件邮箱',
+    'recipient_placeholder' => '留空使用默认邮箱',
+    'query_password' => '查询密码',
+    'query_password_placeholder' => '设置查询数据的密码',
+    'query_password_hint' => '留空保留当前密码。用于访问 /query 页面。',
+    'status' => '状态',
+    'active' => '启用',
+    'inactive' => '停用',
+    'draft' => '草稿',
+    'no_forms' => '暂无表单。',
+    'form_created' => '表单创建成功。',
+    'form_updated' => '表单更新成功。',
+    'form_deleted' => '表单已删除。',
+
+    // Embed
+    'embed_instructions' => '复制以下代码粘贴到你的网站中：',
+    'theme' => '主题',
+    'light' => '浅色',
+    'dark' => '深色',
+    'auto' => '自动',
+    'language' => '语言',
+
+    // Submissions
+    'recent_submissions' => '最近提交',
+    'submission_time' => '时间',
+    'name' => '姓名',
+    'contact' => '联系方式',
+    'content' => '内容',
+    'email_status' => '邮件状态',
+    'sent' => '已发送',
+    'failed' => '发送失败',
+    'pending' => '待发送',
+    'no_submissions' => '暂无提交。',
+
+    // Form fields (embed)
+    'form_name_label' => '姓名',
+    'form_name_placeholder' => '请输入姓名',
+    'form_contact' => '联系方式',
+    'form_contact_email' => '邮箱',
+    'form_contact_phone' => '电话',
+    'form_contact_placeholder_email' => 'your@email.com',
+    'form_contact_placeholder_phone' => '请输入电话号码',
+    'form_contact_hint' => '至少填写一项',
+    'form_content_label' => '内容',
+    'form_content_placeholder' => '请输入内容',
+    'form_submit' => '提交',
+    'form_contact_type_required' => '请至少提供邮箱或电话',
+    'form_submit_success' => '提交成功！',
+    'form_submit_error' => '提交失败，请重试',
+    'form_validation_error' => '请填写所有必填字段',
+
+    // Query page
+    'query_title' => '表单数据查询',
+    'query_login_desc' => '输入密码查看提交数据',
+    'query_form_select' => '选择表单',
+    'query_all_forms' => '全部表单',
+    'query_search' => '搜索',
+    'query_no_results' => '没有匹配的结果。',
+];
