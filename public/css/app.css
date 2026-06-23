@@ -224,14 +224,16 @@ textarea { resize: vertical; min-height: 80px; }
 }
 
 /* ===== Login Page ===== */
+body.login-page { display: block; }
 .login-page {
-  display: flex; align-items: center; justify-content: center;
   min-height: 100vh; background: #f5f5f7;
+  padding: 60px 0; text-align: center;
 }
 .login-box {
   background: #fff; border: 1px solid #e5e5e7;
   border-radius: 8px; padding: 32px; width: 360px;
-  max-width: 90vw;
+  max-width: 90vw; margin: 0 auto;
+  position: relative; z-index: 1;
 }
 .login-box h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; text-align: center; }
 .login-box .login-desc { font-size: 13px; color: #8e8e93; margin-bottom: 20px; text-align: center; }

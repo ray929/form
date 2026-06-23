@@ -35,6 +35,7 @@ require __DIR__ . '/../partials/header_simple.php';
       <div class="form-group">
         <label><?= h($lang['password']) ?></label>
         <input type="password" name="password" id="login-password"
+               autocomplete="current-password"
                placeholder="<?= h($lang['password_placeholder']) ?>" required autofocus>
       </div>
     </div>
